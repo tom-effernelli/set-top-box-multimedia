@@ -4,7 +4,7 @@
 #include "Video.h"
 
 int main() {
-    std::string n1 = "Vacances", p1 = "vacances.jpg";
+    std::string n1 = "Vacations", p1 = "vacations.jpg";
     std::string n2 = "Film", p2 = "movie.mp4";
 
     const int count = 2;

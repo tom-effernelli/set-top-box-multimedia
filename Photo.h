@@ -12,14 +12,14 @@ class Photo : public MultimediaObj {
     public:
         Photo(std::string& name, std::string& path, float latitude, float longitude);
         Photo();
-        ~Photo() override;
+        virtual ~Photo() override;
 
         float getLatitude() const;
         float getLongitude() const;
         void setLatitude(float);
         void setLongitude(float);
-        std::ostream& display(std::ostream &os) const override; // prints instance variables into os output stream
-        void play() const;
+        virtual std::ostream& display(std::ostream &os) const override; // prints instance variables into os output stream
+        virtual void play() const;
 };
 
 #endif

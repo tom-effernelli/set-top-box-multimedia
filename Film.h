@@ -1,0 +1,23 @@
+#ifndef FILM_H
+#define FILM_H
+
+#include "Video.h"
+
+class Film : public Video {
+    private:
+        int * chapterDurations = nullptr;
+        int numberOfChapters = 0;
+    public:
+        Film();
+        Film(std::string& name, std::string& path, int duration, int * chapters, int numChapters);
+        
+        virtual ~Film();
+
+        void setChapters(const int * chapters, int numChapters);
+        const int * getChapters() const;
+        int getNumberOfChapters() const;
+
+        virtual std::ostream& display(std::ostream &os) const override;
+};
+
+#endif

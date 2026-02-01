@@ -29,6 +29,6 @@ void MultimediaObj::setPath(std::string& p) {
 }
 
 std::ostream& MultimediaObj::display(std::ostream &os) const {
-    os << "Nom: " << getName() << " Path: " << getPath() << std::endl;
+    os << "Name: " << getName() << " Path: " << getPath() << std::endl;
     return os;
 }
