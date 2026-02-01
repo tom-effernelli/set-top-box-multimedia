@@ -3,9 +3,12 @@
 
 #include <list>
 #include <string>
+#include <memory>
 #include "MultimediaObj.h"
 
-class Group : public std::list<MultimediaObj*> {
+typedef std::shared_ptr<MultimediaObj> MultimediaPtr;
+
+class Group : public std::list<MultimediaPtr> {
     private:
         std::string groupName;
 
