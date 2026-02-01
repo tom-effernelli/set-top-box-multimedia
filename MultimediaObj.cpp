@@ -1,6 +1,6 @@
 #include "MultimediaObj.h"
 
-MultimediaObj::MultimediaObj(std::string name, std::string path) {
+MultimediaObj::MultimediaObj(std::string& name, std::string& path) {
     this->name=name;
     this->path=path;
 }
@@ -20,11 +20,11 @@ std::string MultimediaObj::getPath() const {
     return path;
 }
 
-void MultimediaObj::setName(std::string n) {
+void MultimediaObj::setName(std::string& n) {
     name=n;
 }
 
-void MultimediaObj::setPath(std::string p) {
+void MultimediaObj::setPath(std::string& p) {
     path=p;
 }
 
