@@ -10,6 +10,8 @@ class Film : public Video {
     public:
         Film();
         Film(std::string& name, std::string& path, int duration, int * chapters, int numChapters);
+
+        Film(const Film& from);
         
         virtual ~Film();
 

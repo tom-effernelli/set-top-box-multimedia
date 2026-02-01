@@ -9,6 +9,12 @@ Film::Film(std::string& name, std::string& path, int duration, int * chapters, i
     setChapters(chapters, numChapters);
 }
 
+Film::Film(const Film& from) : Video(from) {
+    this->chapterDurations = nullptr; 
+    
+    this->setChapters(from.chapterDurations, from.numberOfChapters);
+}
+
 Film::~Film() {
     delete[] chapterDurations;
 }
