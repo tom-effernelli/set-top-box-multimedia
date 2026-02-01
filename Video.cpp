@@ -25,6 +25,6 @@ std::ostream& Video::display(std::ostream &os) const {
 }
 
 void Video::play() const {
-    std::string command = "mpv " + getPath() + " &";
+    std::string command = "vlc " + getPath() + " &";
     system(command.c_str());
 }

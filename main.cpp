@@ -1,17 +1,27 @@
 #include <iostream>
 #include <string>
-#include "MultimediaObj.h"
+#include "Photo.h"
+#include "Video.h"
 
 int main() {
-    // On crée des variables string d'abord
-    std::string n = "Mon Image";
-    std::string p = "images/photo.jpg";
+    std::string n1 = "Vacances", p1 = "vacances.jpg";
+    std::string n2 = "Film", p2 = "movie.mp4";
 
-    // Maintenant, le compilateur accepte car n et p sont des variables (l-values)
-    MultimediaObj * m1 = new MultimediaObj(n, p);
-    
-    m1->display(std::cout);
-    
-    delete m1;
+    const int count = 2;
+    MultimediaObj ** inventaire = new MultimediaObj*[count];
+
+    inventaire[0] = new Photo(n1, p1, 48.8, 2.3);
+    inventaire[1] = new Video(n2, p2, 120);
+
+    for (int i = 0; i < count; i++) {
+        inventaire[i]->display(std::cout);
+        inventaire[i]->play();
+    }
+
+    for (int i = 0; i < count; i++) {
+        delete inventaire[i];
+    }
+    delete[] inventaire;
+
     return 0;
 }

@@ -33,6 +33,6 @@ std::ostream& Photo::display(std::ostream &os) const {
 }
 
 void Photo::play() const {
-    std::string command = "mpv " + getPath() + " &";
+    std::string command = "start " + getPath() + " &";
     system(command.c_str());
 }
