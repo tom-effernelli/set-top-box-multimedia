@@ -20,7 +20,7 @@ class Film : public Video {
         int getNumberOfChapters() const;
 
         virtual std::ostream& display(std::ostream &os) const override;
-        void Film::write(std::ostream& os) const;
+        void write(std::ostream& os) const;
 };
 
 #endif
