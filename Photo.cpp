@@ -5,7 +5,7 @@ Photo::Photo() : MultimediaObj() {
     longitude = 0;
 }
 
-Photo::Photo(std::string& name, std::string& path, float lat, float lon) : MultimediaObj(name, path) {
+Photo::Photo(const std::string& name, const std::string& path, float lat, float lon) : MultimediaObj(name, path) {
     this->latitude = lat;
     this->longitude = lon;
 }

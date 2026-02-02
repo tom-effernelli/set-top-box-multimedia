@@ -1,6 +1,6 @@
 #include "Group.h"
 
-Group::Group(std::string& name) : std::list<MultimediaPtr>() {
+Group::Group(const std::string& name) : std::list<MultimediaPtr>() {
     this->groupName = name;
 }
 

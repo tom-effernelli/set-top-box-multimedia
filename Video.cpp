@@ -4,7 +4,7 @@ Video::Video() : MultimediaObj() {
     length = 0;
 }
 
-Video::Video(std::string& name, std::string& path, float len) : MultimediaObj(name, path) {
+Video::Video(const std::string& name, const std::string& path, float len) : MultimediaObj(name, path) {
     this->length = len;
 }
 

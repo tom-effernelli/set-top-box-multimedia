@@ -9,7 +9,7 @@ class Video : public MultimediaObj {
     private:
         float length{};
     public:
-        Video(std::string& name, std::string& path, float length);
+        Video(const std::string& name, const std::string& path, float length);
         Video();
         virtual ~Video() override;
 

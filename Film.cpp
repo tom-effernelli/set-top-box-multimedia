@@ -5,7 +5,7 @@ Film::Film() : Video() {
     numberOfChapters = 0;
 }
 
-Film::Film(std::string& name, std::string& path, int duration, int * chapters, int numChapters) : Video(name, path, duration) {
+Film::Film(const std::string& name, const std::string& path, int duration, int * chapters, int numChapters) : Video(name, path, duration) {
     setChapters(chapters, numChapters);
 }
 

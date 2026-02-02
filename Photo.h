@@ -10,7 +10,7 @@ class Photo : public MultimediaObj {
         float latitude{};
         float longitude{};
     public:
-        Photo(std::string& name, std::string& path, float latitude, float longitude);
+        Photo(const std::string& name, const std::string& path, float latitude, float longitude);
         Photo();
         virtual ~Photo() override;
 

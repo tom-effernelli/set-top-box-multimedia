@@ -14,7 +14,7 @@ class Group : public std::list<MultimediaPtr> {
 
     public:
         Group();
-        Group(std::string& name);
+        Group(const std::string& name);
         virtual ~Group();
 
         std::string getName() const;

@@ -14,7 +14,7 @@ PROG = set-top-box-multimedia
 #
 # Fichiers sources (NE PAS METTRE les .h ni les .o seulement les .cpp)
 #
-SOURCES = MultimediaObj.cpp main.cpp
+SOURCES = MultimediaObj.cpp Photo.cpp Video.cpp Film.cpp Group.cpp Manager.cpp main.cpp
 
 #
 # Fichiers objets (ne pas modifier sauf si l'extension n'est pas .cpp)

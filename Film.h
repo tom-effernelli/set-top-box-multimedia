@@ -9,7 +9,7 @@ class Film : public Video {
         int numberOfChapters = 0;
     public:
         Film();
-        Film(std::string& name, std::string& path, int duration, int * chapters, int numChapters);
+        Film(const std::string& name, const std::string& path, int duration, int * chapters, int numChapters);
 
         Film(const Film& from);
         
