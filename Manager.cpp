@@ -65,7 +65,7 @@ bool Manager::processRequest(const std::string& request, std::string& response) 
         } else {
             response = "Error: Media '" + name + "' not found.";
         }
-    } 
+    }
     else if (command == "DISPLAY") {
         std::stringstream output;
         display(name, output);
