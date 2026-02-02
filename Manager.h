@@ -28,6 +28,8 @@ public:
 
     void display(std::string name, std::ostream& os) const;
     void play(std::string name) const;
+
+    bool processRequest(const std::string& request, std::string& response);
 };
 
 #endif

@@ -1,4 +1,6 @@
 #include <iostream>
+#include <sstream>
+#include <algorithm>
 #include "Manager.h"
 
 std::shared_ptr<Photo> Manager::createPhoto(std::string name, std::string path, float lat, float lon) {
@@ -47,4 +49,30 @@ void Manager::play(std::string name) const {
     } else {
         std::cout << "Error: Unable to play '" << name << "' (not found)." << std::endl;
     }
+}
+
+bool Manager::processRequest(const std::string& request, std::string& response) {
+    std::stringstream ss(request);
+    std::string command, name;
+
+    ss >> command >> name;
+
+    if (command == "PLAY") {
+        play(name);
+        response = "OK: Playing " + name;
+    }
+    else if (command == "DISPLAY") {
+        std::stringstream output;
+        display(name, output);
+        response = output.str();
+        if (response.empty()) response = "Error: '" + name + "' not found.";
+    } 
+    else if (command == "QUIT") {
+        response = "Bye!";
+        return false; // Close connexion
+    } 
+    else {
+        response = "Error: Unknown command '" + command + "'";
+    }
+    return true; // Keep connexion open
 }
