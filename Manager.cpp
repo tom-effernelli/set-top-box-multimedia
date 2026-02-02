@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <algorithm>
+#include <fstream>
 #include "Manager.h"
 
 std::shared_ptr<Photo> Manager::createPhoto(std::string name, std::string path, float lat, float lon) {
@@ -54,25 +55,102 @@ void Manager::play(std::string name) const {
 bool Manager::processRequest(const std::string& request, std::string& response) {
     std::stringstream ss(request);
     std::string command, name;
-
     ss >> command >> name;
 
     if (command == "PLAY") {
-        play(name);
-        response = "OK: Playing " + name;
-    }
+        auto it = mediaTable.find(name);
+        if (it != mediaTable.end()) {
+            it->second->play();
+            response = "OK: Playing " + name;
+        } else {
+            response = "Error: Media '" + name + "' not found.";
+        }
+    } 
     else if (command == "DISPLAY") {
         std::stringstream output;
         display(name, output);
         response = output.str();
-        if (response.empty()) response = "Error: '" + name + "' not found.";
+        std::replace(response.begin(), response.end(), '\n', ';');
     } 
+    else if (command == "SAVE") {
+        save("database.txt");
+        response = "OK: Database saved.";
+    }
+    else if (command == "LOAD") {
+        load("database.txt");
+        response = "OK: Database loaded.";
+    }
     else if (command == "QUIT") {
         response = "Bye!";
-        return false; // Close connexion
+        return false;
     } 
     else {
-        response = "Error: Unknown command '" + command + "'";
+        response = "Error: Unknown command.";
     }
-    return true; // Keep connexion open
+    return true;
+}
+
+void Manager::save(const std::string& filename) const {
+    std::ofstream ofs(filename);
+    if (!ofs) {
+        std::cerr << "Erreur ouverture fichier" << std::endl;
+        return;
+    }
+    for (auto const& pair : mediaTable) {
+        pair.second->write(ofs);
+    }
+}
+
+void Manager::load(const std::string& filename) {
+    std::ifstream ifs(filename);
+    
+    if (!ifs) {
+        std::cerr << "Erreur : Impossible d'ouvrir le fichier " << filename << " en lecture." << std::endl;
+        return;
+    }
+
+    std::string type;
+    while (std::getline(ifs, type)) {
+        
+        std::string name, path;
+
+        if (type == "Photo") {
+            float lat, lon;
+            std::getline(ifs, name);
+            std::getline(ifs, path);
+            ifs >> lat >> lon;
+            ifs.ignore();
+            
+            this->createPhoto(name, path, lat, lon);
+        }
+        
+        else if (type == "Video") {
+            int duration;
+            std::getline(ifs, name);
+            std::getline(ifs, path);
+            ifs >> duration;
+            ifs.ignore();
+            
+            this->createVideo(name, path, duration);
+        }
+        
+        else if (type == "Film") {
+            int duration, count;
+            std::getline(ifs, name);
+            std::getline(ifs, path);
+            ifs >> duration >> count;
+            
+            int* chapters = new int[count];
+            for (int i = 0; i < count; ++i) {
+                ifs >> chapters[i];
+            }
+            ifs.ignore();
+            
+            this->createFilm(name, path, duration, chapters, count);
+            
+            delete[] chapters;
+        }
+    }
+    
+    std::cout << "Chargement termine avec succes depuis " << filename << std::endl;
 }

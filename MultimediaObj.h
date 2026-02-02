@@ -20,6 +20,7 @@ class MultimediaObj {
         void setPath(const std::string& p);
         virtual std::ostream& display(std::ostream &os) const; // prints instance variables into os output stream
         virtual void play() const = 0;
+        virtual void write(std::ostream& os) const;
 };
 
 #endif

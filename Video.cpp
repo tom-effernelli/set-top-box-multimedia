@@ -28,3 +28,9 @@ void Video::play() const {
     std::string command = "vlc " + getPath() + " &";
     system(command.c_str());
 }
+
+void Video::write(std::ostream& os) const {
+    os << "Video\n";
+    MultimediaObj::write(os);
+    os << length << "\n";
+}

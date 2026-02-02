@@ -32,3 +32,7 @@ std::ostream& MultimediaObj::display(std::ostream &os) const {
     os << "Name: " << getName() << " Path: " << getPath() << std::endl;
     return os;
 }
+
+void MultimediaObj::write(std::ostream& os) const {
+    os << getName() << "\n" << getPath() << "\n";
+}

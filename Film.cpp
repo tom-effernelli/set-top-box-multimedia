@@ -52,3 +52,16 @@ std::ostream& Film::display(std::ostream &os) const {
     os << std::endl;
     return os;
 }
+
+void Film::write(std::ostream& os) const {
+    os << "Film\n"              // 1. Le type (pour le load)
+       << getName() << "\n"      // 2. Nom
+       << getPath() << "\n"      // 3. Chemin
+       << getLength() << "\n"  // 4. Durée (héritée de Video)
+       << getNumberOfChapters() << "\n"; // 5. Nombre de chapitres
+
+    for (int i = 0; i < getNumberOfChapters(); ++i) {
+        os << getChapters()[i] << (i == getNumberOfChapters() - 1 ? "" : " ");
+    }
+    os << "\n"; 
+}

@@ -30,6 +30,8 @@ public:
     void play(std::string name) const;
 
     bool processRequest(const std::string& request, std::string& response);
+    void save(const std::string& filename) const;
+    void load(const std::string& filename);
 };
 
 #endif

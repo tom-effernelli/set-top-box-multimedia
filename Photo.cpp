@@ -36,3 +36,9 @@ void Photo::play() const {
     std::string command = "start " + getPath() + " &";
     system(command.c_str());
 }
+
+void Photo::write(std::ostream& os) const {
+    os << "Photo\n";
+    MultimediaObj::write(os);
+    os << latitude << "\n" << longitude << "\n";
+}
