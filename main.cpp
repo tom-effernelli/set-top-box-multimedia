@@ -12,7 +12,7 @@ using FilmPtr = std::shared_ptr<Film>;
 using GroupPtr = std::shared_ptr<Group>;
 
 int main() {
-    std::cout << "--- Debut du programme (Gestion Auto) ---" << std::endl;
+    std::cout << "--- Debut du programme ---" << std::endl;
 
     PhotoPtr p1 = std::make_shared<Photo>("TourEiffel", "eiffel.jpg", 48.8, 2.2);
     VideoPtr v1 = std::make_shared<Video>("ChatRigolo", "cat.mp4", 30);
