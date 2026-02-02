@@ -1,2 +1,11 @@
+main.o: main.cpp tcpserver.h ccsocket.h Manager.h Photo.h MultimediaObj.h \
+ Video.h Film.h Group.h
+Manager.o: Manager.cpp Manager.h Photo.h MultimediaObj.h Video.h Film.h \
+ Group.h
+Photo.o: Photo.cpp Photo.h MultimediaObj.h
+Video.o: Video.cpp Video.h MultimediaObj.h
+Film.o: Film.cpp Film.h Video.h MultimediaObj.h
+Group.o: Group.cpp Group.h MultimediaObj.h
 MultimediaObj.o: MultimediaObj.cpp MultimediaObj.h
-main.o: main.cpp Photo.h MultimediaObj.h Video.h Film.h Group.h
+ccsocket.o: ccsocket.cpp ccsocket.h
+tcpserver.o: tcpserver.cpp tcpserver.h ccsocket.h
