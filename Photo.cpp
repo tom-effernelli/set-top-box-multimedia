@@ -33,7 +33,7 @@ std::ostream& Photo::display(std::ostream &os) const {
 }
 
 void Photo::play() const {
-    std::string command = "start " + getPath() + " &";
+    std::string command = "xdg-open " + getPath() + " &";
     system(command.c_str());
 }
 
