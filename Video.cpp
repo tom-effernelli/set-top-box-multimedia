@@ -25,7 +25,7 @@ std::ostream& Video::display(std::ostream &os) const {
 }
 
 void Video::play() const {
-    std::string command = "vlc " + getPath() + " &";
+    std::string command = "xdg-open " + getPath() + " &";
     system(command.c_str());
 }
 
