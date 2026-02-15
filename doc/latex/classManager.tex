@@ -1,0 +1,119 @@
+\hypertarget{classManager}{}\doxysection{Manager Class Reference}
+\label{classManager}\index{Manager@{Manager}}
+
+
+{\ttfamily \#include $<$Manager.\+h$>$}
+
+
+
+Collaboration diagram for Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classManager_a1658ff9f18e38ccd9cb8b0b371b9c20b}{Manager}} ()
+\item 
+\mbox{\hyperlink{classManager_a322cad25d7007438b3a043ad02253d29}{$\sim$\+Manager}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classPhoto}{Photo}} $>$ \mbox{\hyperlink{classManager_a3d8737c86bbfc7cbc359b59e398a7d58}{create\+Photo}} (std\+::string name, std\+::string path, float lat, float lon)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classVideo}{Video}} $>$ \mbox{\hyperlink{classManager_a985b502e060a23afa2d2fe1ee60e7603}{create\+Video}} (std\+::string name, std\+::string path, int duration)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classFilm}{Film}} $>$ \mbox{\hyperlink{classManager_ab912b9d4ca1238f24914f63626162dfe}{create\+Film}} (std\+::string name, std\+::string path, int duration, int $\ast$chapters, int num\+Chapters)
+\item 
+\mbox{\hyperlink{Manager_8h_a39c11e38578c734765a185f82eb65d45}{Group\+Ptr}} \mbox{\hyperlink{classManager_a4e9993d372ba96cbf6d94be5c181dfda}{create\+Group}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classManager_a2362caec0d8d3500a32e89a3b96f1d07}{display}} (std\+::string name, std\+::ostream \&os) const
+\item 
+void \mbox{\hyperlink{classManager_af3870c3b6a06049ba70760e945b5ef59}{play}} (std\+::string name) const
+\item 
+bool \mbox{\hyperlink{classManager_a1f51ea48ab08bda422481e36010f11ee}{process\+Request}} (const std\+::string \&request, std\+::string \&response)
+\item 
+void \mbox{\hyperlink{classManager_a489c777e65f856e266285f134254b687}{save}} (const std\+::string \&filename) const
+\item 
+void \mbox{\hyperlink{classManager_aaba6425c88aab983e25c0589754d5ad5}{load}} (const std\+::string \&filename)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classManager_a1658ff9f18e38ccd9cb8b0b371b9c20b}\label{classManager_a1658ff9f18e38ccd9cb8b0b371b9c20b}} 
+\index{Manager@{Manager}!Manager@{Manager}}
+\index{Manager@{Manager}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{Manager()}{Manager()}}
+{\footnotesize\ttfamily Manager\+::\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classManager_a322cad25d7007438b3a043ad02253d29}\label{classManager_a322cad25d7007438b3a043ad02253d29}} 
+\index{Manager@{Manager}!````~Manager@{$\sim$Manager}}
+\index{````~Manager@{$\sim$Manager}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{$\sim$Manager()}{~Manager()}}
+{\footnotesize\ttfamily Manager\+::$\sim$\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classManager_ab912b9d4ca1238f24914f63626162dfe}\label{classManager_ab912b9d4ca1238f24914f63626162dfe}} 
+\index{Manager@{Manager}!createFilm@{createFilm}}
+\index{createFilm@{createFilm}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{createFilm()}{createFilm()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classFilm}{Film}} $>$ Manager\+::create\+Film (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{path,  }\item[{int}]{duration,  }\item[{int $\ast$}]{chapters,  }\item[{int}]{num\+Chapters }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classManager_a4e9993d372ba96cbf6d94be5c181dfda}\label{classManager_a4e9993d372ba96cbf6d94be5c181dfda}} 
+\index{Manager@{Manager}!createGroup@{createGroup}}
+\index{createGroup@{createGroup}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{createGroup()}{createGroup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Manager_8h_a39c11e38578c734765a185f82eb65d45}{Group\+Ptr}} Manager\+::create\+Group (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classManager_a3d8737c86bbfc7cbc359b59e398a7d58}\label{classManager_a3d8737c86bbfc7cbc359b59e398a7d58}} 
+\index{Manager@{Manager}!createPhoto@{createPhoto}}
+\index{createPhoto@{createPhoto}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{createPhoto()}{createPhoto()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classPhoto}{Photo}} $>$ Manager\+::create\+Photo (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{path,  }\item[{float}]{lat,  }\item[{float}]{lon }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classManager_a985b502e060a23afa2d2fe1ee60e7603}\label{classManager_a985b502e060a23afa2d2fe1ee60e7603}} 
+\index{Manager@{Manager}!createVideo@{createVideo}}
+\index{createVideo@{createVideo}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{createVideo()}{createVideo()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classVideo}{Video}} $>$ Manager\+::create\+Video (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{path,  }\item[{int}]{duration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classManager_a2362caec0d8d3500a32e89a3b96f1d07}\label{classManager_a2362caec0d8d3500a32e89a3b96f1d07}} 
+\index{Manager@{Manager}!display@{display}}
+\index{display@{display}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Manager\+::display (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classManager_aaba6425c88aab983e25c0589754d5ad5}\label{classManager_aaba6425c88aab983e25c0589754d5ad5}} 
+\index{Manager@{Manager}!load@{load}}
+\index{load@{load}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Manager\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classManager_af3870c3b6a06049ba70760e945b5ef59}\label{classManager_af3870c3b6a06049ba70760e945b5ef59}} 
+\index{Manager@{Manager}!play@{play}}
+\index{play@{play}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void Manager\+::play (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classManager_a1f51ea48ab08bda422481e36010f11ee}\label{classManager_a1f51ea48ab08bda422481e36010f11ee}} 
+\index{Manager@{Manager}!processRequest@{processRequest}}
+\index{processRequest@{processRequest}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{processRequest()}{processRequest()}}
+{\footnotesize\ttfamily bool Manager\+::process\+Request (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{request,  }\item[{std\+::string \&}]{response }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classManager_a489c777e65f856e266285f134254b687}\label{classManager_a489c777e65f856e266285f134254b687}} 
+\index{Manager@{Manager}!save@{save}}
+\index{save@{save}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Manager\+::save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cpp/\mbox{\hyperlink{Manager_8h}{Manager.\+h}}\item 
+cpp/\mbox{\hyperlink{Manager_8cpp}{Manager.\+cpp}}\end{DoxyCompactItemize}

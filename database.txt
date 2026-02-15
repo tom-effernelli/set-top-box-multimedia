@@ -1,9 +1,0 @@
-Video
-WindowsVideo
-Windows.webm
-30
-Photo
-WindowsPhoto
-image.jpeg
-24
-42
