@@ -1,0 +1,15 @@
+Video
+Chat
+cat.mp4
+30
+Photo
+Eiffel
+eiffel.jpg
+48.8
+2.2
+Photo
+Plage
+beach.jpg
+0
+0
+image.jpeg
